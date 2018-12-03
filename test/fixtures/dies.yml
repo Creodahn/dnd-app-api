@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ceil: 1
+  floor: 1
+  name: MyString
+
+two:
+  ceil: 1
+  floor: 1
+  name: MyString

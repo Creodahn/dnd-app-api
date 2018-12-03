@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  max_cr: 1
+  min_cr: 1
+  rules: 
+  treasure_type: MyString
+
+two:
+  max_cr: 1
+  min_cr: 1
+  rules: 
+  treasure_type: MyString
