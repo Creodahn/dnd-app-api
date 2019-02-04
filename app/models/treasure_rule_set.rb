@@ -1,0 +1,2 @@
+class TreasureRuleSet < ApplicationRecord
+end

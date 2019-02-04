@@ -1,6 +1,6 @@
-class CreateTreasureRules < ActiveRecord::Migration[5.1]
+class CreateTreasureRuleSets < ActiveRecord::Migration[5.1]
   def change
-    create_table :treasure_rules do |t|
+    create_table :treasure_rule_sets do |t|
       t.integer :max_cr
       t.integer :min_cr
       t.text :rules

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181203023855) do
+ActiveRecord::Schema.define(version: 20190201195738) do
 
   create_table "art_objects", force: :cascade do |t|
     t.string "name"
@@ -35,6 +35,13 @@ ActiveRecord::Schema.define(version: 20181203023855) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "dice_calculations", force: :cascade do |t|
+    t.integer "dice_count"
+    t.string "item_type"
+    t.integer "item_value"
+    t.integer "multiplier"
+  end
+
   create_table "gemstones", force: :cascade do |t|
     t.text "description"
     t.string "name"
@@ -44,6 +51,7 @@ ActiveRecord::Schema.define(version: 20181203023855) do
   end
 
   create_table "magic_items", force: :cascade do |t|
+    t.text "additional_roll"
     t.integer "max"
     t.integer "min"
     t.string "name"
@@ -52,13 +60,20 @@ ActiveRecord::Schema.define(version: 20181203023855) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "treasure_rules", force: :cascade do |t|
+  create_table "treasure_rule_sets", force: :cascade do |t|
     t.integer "max_cr"
     t.integer "min_cr"
     t.text "rules"
     t.string "treasure_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "treasure_rules", force: :cascade do |t|
+    t.integer "max"
+    t.integer "min"
+    t.integer "treasure_rule_sets_id"
+    t.index ["treasure_rule_sets_id"], name: "index_treasure_rules_on_treasure_rule_sets_id"
   end
 
 end

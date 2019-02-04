@@ -1,4 +1,4 @@
-TreasureRule.create(max_cr: 4, min_cr: 0, treasure_type: 'hoard', rules: {
+TreasureRuleSet.create(max_cr: 4, min_cr: 0, treasure_type: 'hoard', rules: {
   'data': [
     {
       'max': 6,
