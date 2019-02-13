@@ -6,7 +6,7 @@ class CreateTreasureRuleSets < ActiveRecord::Migration[5.1]
       t.text :rules
       t.string :treasure_type
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end

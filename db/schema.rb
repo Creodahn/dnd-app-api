@@ -31,15 +31,23 @@ ActiveRecord::Schema.define(version: 20190201195738) do
     t.integer "ceil"
     t.integer "floor"
     t.string "name"
+    t.boolean "show_to_user", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "dice_calculations", force: :cascade do |t|
-    t.integer "dice_count"
+    t.integer "dice_count", default: 1
+    t.string "item_table"
     t.string "item_type"
     t.integer "item_value"
-    t.integer "multiplier"
+    t.integer "multiplier", default: 1
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "die_id"
+    t.integer "treasure_rule_id"
+    t.index ["die_id"], name: "index_dice_calculations_on_die_id"
+    t.index ["treasure_rule_id"], name: "index_dice_calculations_on_treasure_rule_id"
   end
 
   create_table "gemstones", force: :cascade do |t|
@@ -72,8 +80,10 @@ ActiveRecord::Schema.define(version: 20190201195738) do
   create_table "treasure_rules", force: :cascade do |t|
     t.integer "max"
     t.integer "min"
-    t.integer "treasure_rule_sets_id"
-    t.index ["treasure_rule_sets_id"], name: "index_treasure_rules_on_treasure_rule_sets_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "treasure_rule_set_id"
+    t.index ["treasure_rule_set_id"], name: "index_treasure_rules_on_treasure_rule_set_id"
   end
 
 end

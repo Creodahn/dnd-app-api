@@ -7,7 +7,7 @@ class CreateMagicItems < ActiveRecord::Migration[5.1]
       t.string :name
       t.string :table
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end

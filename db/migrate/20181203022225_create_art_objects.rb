@@ -4,7 +4,7 @@ class CreateArtObjects < ActiveRecord::Migration[5.1]
       t.string :name
       t.integer :value
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end

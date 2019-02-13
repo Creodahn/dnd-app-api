@@ -1,3 +1,4 @@
+Die.create(ceil: 1, floor: 1, name: 'd1', show_to_user: false)
 Die.create(ceil: 2, floor: 1, name: 'd2')
 Die.create(ceil: 3, floor: 1, name: 'd3')
 Die.create(ceil: 4, floor: 1, name: 'd4')

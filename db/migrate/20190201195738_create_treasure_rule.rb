@@ -3,9 +3,11 @@ class CreateTreasureRule < ActiveRecord::Migration[5.1]
     create_table :treasure_rules do |t|
       t.integer :max
       t.integer :min
-      t.belongs_to :treasure_rule_sets, index: true
+
+      t.timestamps null: false
     end
 
-    add_foreign_key :dice_calculations, :treasure_rules, index: true
+    add_reference :treasure_rules, :treasure_rule_set, index: true
+    add_foreign_key :treasure_rules, :treasure_rule_sets, column: :treasure_rule_set_id
   end
 end

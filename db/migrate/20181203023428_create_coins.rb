@@ -5,7 +5,7 @@ class CreateCoins < ActiveRecord::Migration[5.1]
       t.decimal :value
       t.decimal :weight
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end
