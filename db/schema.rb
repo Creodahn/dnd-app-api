@@ -47,8 +47,10 @@ ActiveRecord::Schema.define(version: 20190201195738) do
     t.integer "multiplier", default: 1
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "coin_id"
     t.bigint "die_id"
     t.bigint "treasure_rule_id"
+    t.index ["coin_id"], name: "index_dice_calculations_on_coin_id"
     t.index ["die_id"], name: "index_dice_calculations_on_die_id"
     t.index ["treasure_rule_id"], name: "index_dice_calculations_on_treasure_rule_id"
   end
@@ -89,6 +91,7 @@ ActiveRecord::Schema.define(version: 20190201195738) do
     t.index ["treasure_rule_set_id"], name: "index_treasure_rules_on_treasure_rule_set_id"
   end
 
+  add_foreign_key "dice_calculations", "coins"
   add_foreign_key "dice_calculations", "dice"
   add_foreign_key "dice_calculations", "treasure_rules"
   add_foreign_key "treasure_rules", "treasure_rule_sets"

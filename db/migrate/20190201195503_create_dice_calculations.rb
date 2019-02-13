@@ -10,6 +10,9 @@ class CreateDiceCalculations < ActiveRecord::Migration[5.1]
       t.timestamps null: false
     end
 
+    add_reference :dice_calculations, :coin, index: true
+    add_foreign_key :dice_calculations, :coins, column: :coin_id
+    
     add_reference :dice_calculations, :die, index: true
     add_foreign_key :dice_calculations, :dice, column: :die_id
 
