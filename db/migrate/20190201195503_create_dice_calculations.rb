@@ -11,10 +11,7 @@ class CreateDiceCalculations < ActiveRecord::Migration[5.1]
     end
 
     add_reference :dice_calculations, :die, index: true
-    add_foreign_key :dice_calculations, :die, column: :die_id
-
-    add_reference :dice_calculations, :treasure_rule, index: true
-    add_foreign_key :dice_calculations, :treasure_rules, columm: :treasure_rule_id
+    add_foreign_key :dice_calculations, :dice, column: :die_id
 
     change_column_default :dice_calculations, :dice_count, from: nil, to: 1
     change_column_default :dice_calculations, :multiplier, from: nil, to: 1

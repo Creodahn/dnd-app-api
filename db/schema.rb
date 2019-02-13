@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20190201195738) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "art_objects", force: :cascade do |t|
     t.string "name"
     t.integer "value"
@@ -44,8 +47,8 @@ ActiveRecord::Schema.define(version: 20190201195738) do
     t.integer "multiplier", default: 1
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "die_id"
-    t.integer "treasure_rule_id"
+    t.bigint "die_id"
+    t.bigint "treasure_rule_id"
     t.index ["die_id"], name: "index_dice_calculations_on_die_id"
     t.index ["treasure_rule_id"], name: "index_dice_calculations_on_treasure_rule_id"
   end
@@ -82,8 +85,11 @@ ActiveRecord::Schema.define(version: 20190201195738) do
     t.integer "min"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "treasure_rule_set_id"
+    t.bigint "treasure_rule_set_id"
     t.index ["treasure_rule_set_id"], name: "index_treasure_rules_on_treasure_rule_set_id"
   end
 
+  add_foreign_key "dice_calculations", "dice"
+  add_foreign_key "dice_calculations", "treasure_rules"
+  add_foreign_key "treasure_rules", "treasure_rule_sets"
 end
