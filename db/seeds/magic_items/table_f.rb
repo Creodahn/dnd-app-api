@@ -1,3 +1,4 @@
+puts "creating magic item table F"
 MagicItem.create(max: 15, min: 1, name: 'weapon, +1', table: 'F')
 MagicItem.create(max: 18, min: 16, name: 'shield, +1', table: 'F')
 MagicItem.create(max: 21, min: 19, name: 'sentinel shield', table: 'F')

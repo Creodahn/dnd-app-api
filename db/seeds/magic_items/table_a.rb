@@ -1,3 +1,4 @@
+puts "creating magic item table A"
 MagicItem.create(max: 50, min: 1, name: 'potion of healing', table: 'A' )
 MagicItem.create(max: 60, min: 51, name: 'cantrip spell scroll', table: 'A')
 MagicItem.create(max: 70, min: 61, name: 'potion of climbing', table: 'A')

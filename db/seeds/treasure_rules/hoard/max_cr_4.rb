@@ -1,3 +1,5 @@
+puts "creating hoard rules CR 0-4"
+
 # list of dice used in caclulations
 d1 = Die.find_by(name: 'd1')
 d4 = Die.find_by(name: 'd4')

@@ -1,3 +1,4 @@
+puts "creating gemstones"
 Gemstone.create(description: 'opaque mottled deep blue', name: 'Azurite', value: 10)
 Gemstone.create(description: 'opaque dark gray with red flecks', name: 'Bloodstone', value: 50)
 Gemstone.create(description: 'transparent watery gold to rich gold', name: 'Amber', value: 100)

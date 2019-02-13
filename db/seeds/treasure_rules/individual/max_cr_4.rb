@@ -1,3 +1,4 @@
+puts "creating individual treasure rules CR 0-4"
 # get coins used in rule sets
 cp = Coin.find_by(name: 'CP')
 sp = Coin.find_by(name: 'SP')

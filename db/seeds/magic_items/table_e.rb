@@ -1,3 +1,4 @@
+puts "creating magic item table E"
 MagicItem.create(max: 30, min: 1, name: '8th level spell scroll', table: 'E')
 MagicItem.create(max: 55, min: 31, name: 'potion of storm giant strength', table: 'E')
 MagicItem.create(max: 70, min: 56, name: 'potion of supreme healing', table: 'E')

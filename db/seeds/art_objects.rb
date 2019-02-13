@@ -1,3 +1,4 @@
+puts "creating art objects"
 ArtObject.create(name: 'Silver ewer', value: 25)
 ArtObject.create(name: 'Carved bone statuette', value: 25)
 ArtObject.create(name: 'Gold ring set with bloodstones', value: 250)

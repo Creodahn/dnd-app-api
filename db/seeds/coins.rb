@@ -1,3 +1,4 @@
+puts "creating coins"
 Coin.create(name: 'CP', value: 0.01)
 Coin.create(name: 'SP', value: 0.1)
 Coin.create(name: 'EP', value: 0.5)

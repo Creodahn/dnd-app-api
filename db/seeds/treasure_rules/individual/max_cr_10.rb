@@ -1,3 +1,4 @@
+puts "creating individual treasure rules CR 5-10"
 # get coins used in rule sets
 cp = Coin.find_by(name: 'CP')
 sp = Coin.find_by(name: 'SP')
@@ -19,7 +20,7 @@ DiceCalculation.create(dice_count: 6, die_id: d6.id, coin_id: sp.id, multiplier:
 DiceCalculation.create(dice_count: 2, die_id: d6.id, coin_id: gp.id, multiplier: 10, treasure_rule_id: tr.id)
 
 tr = TreasureRule.create(max: 70, min: 61, treasure_rule_set_id: trs.id)
-DiceCalculation/create(dice_count: 3, die_id: d6.id, coin_id: ep.id, multiplier: 10, treasure_rule_id: tr.id)
+DiceCalculation.create(dice_count: 3, die_id: d6.id, coin_id: ep.id, multiplier: 10, treasure_rule_id: tr.id)
 DiceCalculation.create(dice_count: 2, die_id: d6.id, coin_id: gp.id, multiplier: 10, treasure_rule_id: tr.id)
 
 tr = TreasureRule.create(max: 95, min: 71, treasure_rule_set_id: trs.id)

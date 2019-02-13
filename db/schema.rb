@@ -64,13 +64,16 @@ ActiveRecord::Schema.define(version: 20190201195738) do
   end
 
   create_table "magic_items", force: :cascade do |t|
-    t.text "additional_roll"
     t.integer "max"
     t.integer "min"
     t.string "name"
     t.string "table"
+    t.bigint "die_id"
+    t.bigint "parent_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["die_id"], name: "index_magic_items_on_die_id"
+    t.index ["parent_id"], name: "index_magic_items_on_parent_id"
   end
 
   create_table "treasure_rule_sets", force: :cascade do |t|
@@ -94,5 +97,7 @@ ActiveRecord::Schema.define(version: 20190201195738) do
   add_foreign_key "dice_calculations", "coins"
   add_foreign_key "dice_calculations", "dice"
   add_foreign_key "dice_calculations", "treasure_rules"
+  add_foreign_key "magic_items", "dice"
+  add_foreign_key "magic_items", "magic_items", column: "parent_id"
   add_foreign_key "treasure_rules", "treasure_rule_sets"
 end
