@@ -7,4 +7,5 @@ class Api::TreasureRuleResource < JSONAPI::Resource
 
   filter :max
   filter :min
+  filter :treasure_rule_set_id
 end
