@@ -10,30 +10,30 @@ d4 = Die.find_by(name: 'd4')
 d6 = Die.find_by(name: 'd6')
 
 trs = TreasureRuleSet.create(max_cr: 16, min_cr: 11, treasure_type: 'hoard')
-DiceCalculation.create(coin_id: gp.id, dice_count: 4, die_id: d6.id, multiplier: 1000, treasure_rule_set: trs.id)
-DiceCalculation.create(coin_id: pp.id, dice_count: 5, die_id: d6.id, multiplier: 100, treasure_rule_set: trs.id)
+DiceCalculation.create(coin_id: gp.id, dice_count: 4, die_id: d6.id, multiplier: 1000, treasure_rule_set_id: trs.id)
+DiceCalculation.create(coin_id: pp.id, dice_count: 5, die_id: d6.id, multiplier: 100, treasure_rule_set_id: trs.id)
 
-tr = TreasuureRule.create(max: 3, min: 1, treasure_rule_set_id: trs.id)
+tr = TreasureRule.create(max: 3, min: 1, treasure_rule_set_id: trs.id)
 DiceCalculation.create(dice_count: 0, die_id: d6.id, item_type: 'gemstone', item_value: 10, multiplier: 0, treasure_rule_id: tr.id)
 
-tr = TreasuureRule.create(max: 6, min: 4, treasure_rule_set_id: trs.id)
+tr = TreasureRule.create(max: 6, min: 4, treasure_rule_set_id: trs.id)
 DiceCalculation.create(dice_count: 2, die_id: d4.id, item_type: 'art-object', item_value: 250, treasure_rule_id: tr.id)
 
-tr = TreasuureRule.create(max: 9, min: 7, treasure_rule_set_id: trs.id)
+tr = TreasureRule.create(max: 9, min: 7, treasure_rule_set_id: trs.id)
 DiceCalculation.create(dice_count: 2, die_id: d4.id, item_type: 'art-object', item_value: 750, treasure_rule_id: tr.id)
 
-tr = TreasuureRule.create(max: 12, min: 10, treasure_rule_set_id: trs.id)
+tr = TreasureRule.create(max: 12, min: 10, treasure_rule_set_id: trs.id)
 DiceCalculation.create(dice_count: 3, die_id: d6.id, item_type: 'gemstone', item_value: 500, treasure_rule_id: tr.id)
 
-tr = TreasuureRule.create(max: 15, min: 13, treasure_rule_set_id: trs.id)
+tr = TreasureRule.create(max: 15, min: 13, treasure_rule_set_id: trs.id)
 DiceCalculation.create(dice_count: 3, die_id: d6.id, item_type: 'gemstone', item_value: 1000, treasure_rule_id: tr.id)
 
-tr = TreasuureRule.create(max: 19, min: 16, treasure_rule_set_id: trs.id)
+tr = TreasureRule.create(max: 19, min: 16, treasure_rule_set_id: trs.id)
 DiceCalculation.create(dice_count: 2, die_id: d4.id, item_type: 'art-object', item_value: 250, treasure_rule_id: tr.id)
 DiceCalculation.create(die_id: d4.id, item_table: 'A', treasure_rule_id: tr.id)
 DiceCalculation.create(die_id: d6.id, item_table: 'B', treasure_rule_id: tr.id)
 
-tr = TreasuureRule.create(max: 23, min: 20, treasure_rule_set_id: trs.id)
+tr = TreasureRule.create(max: 23, min: 20, treasure_rule_set_id: trs.id)
 DiceCalculation.create(dice_count: 2, die_id: d4.id, item_type: 'art-object', item_value: 750, treasure_rule_id: tr.id)
 DiceCalculation.create(die_id: d4.id, item_table: 'A', treasure_rule_id: tr.id)
 DiceCalculation.create(die_id: d6.id, item_table: 'B', treasure_rule_id: tr.id)
