@@ -1,5 +1,5 @@
 class Api::MagicItemResource < JSONAPI::Resource
-  attributes :max, :min, :name, :table
+  attributes :die_type, :max, :min, :name, :table
 
   has_one :die
   has_one :parent

@@ -5,7 +5,7 @@ class DiceCalculation < ApplicationRecord
   
 
   def coin_type
-    self.coin.name
+    self.coin&.name
   end
 
   def die_type
