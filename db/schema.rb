@@ -49,10 +49,12 @@ ActiveRecord::Schema.define(version: 20190201195738) do
     t.datetime "updated_at", null: false
     t.bigint "coin_id"
     t.bigint "die_id"
+    t.bigint "treasure_rule_set_id"
     t.bigint "treasure_rule_id"
     t.index ["coin_id"], name: "index_dice_calculations_on_coin_id"
     t.index ["die_id"], name: "index_dice_calculations_on_die_id"
     t.index ["treasure_rule_id"], name: "index_dice_calculations_on_treasure_rule_id"
+    t.index ["treasure_rule_set_id"], name: "index_dice_calculations_on_treasure_rule_set_id"
   end
 
   create_table "gemstones", force: :cascade do |t|
@@ -96,6 +98,7 @@ ActiveRecord::Schema.define(version: 20190201195738) do
 
   add_foreign_key "dice_calculations", "coins"
   add_foreign_key "dice_calculations", "dice"
+  add_foreign_key "dice_calculations", "treasure_rule_sets"
   add_foreign_key "dice_calculations", "treasure_rules"
   add_foreign_key "magic_items", "dice"
   add_foreign_key "magic_items", "magic_items", column: "parent_id"

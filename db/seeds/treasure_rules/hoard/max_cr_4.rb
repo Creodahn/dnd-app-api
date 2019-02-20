@@ -1,11 +1,19 @@
 puts "creating hoard rules CR 0-4"
 
-# list of dice used in caclulations
+#list of coins used in calculations
+cp = Coin.find_by(name: 'CP')
+sp = Coin.find_by(name: 'SP')
+gp = Coin.find_by(name: 'GP')
+
+# list of dice used in calculations
 d1 = Die.find_by(name: 'd1')
 d4 = Die.find_by(name: 'd4')
 d6 = Die.find_by(name: 'd6')
 
 trs = TreasureRuleSet.create(max_cr: 4, min_cr: 0, treasure_type: 'hoard')
+DiceCalculation.create(coin_id: cp.id, dice_count: 6, die_id: d6.id, multiplier: 100, treasure_rule_set_id: trs.id)
+DiceCalculation.create(coin_id: sp.id, dice_count: 3, die_id: d6.id, multiplier: 100, treasure_rule_set_id: trs.id)
+DiceCalculation.create(coin_id: gp.id, dice_count: 2, die_id: d6.id, multiplier: 10, treasure_rule_set_id: trs.id)
 
 tr = TreasureRule.create(max: 6, min: 1, treasure_rule_set_id: trs.id)
 DiceCalculation.create(dice_count: 0, die_id: d6.id, item_type: 'gemstone', item_value: 10, multiplier: 0, treasure_rule_id: tr.id)
