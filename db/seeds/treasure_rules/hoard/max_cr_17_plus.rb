@@ -91,7 +91,7 @@ DiceCalculation.create(die_id: d10.id, item_type: 'art-object', item_value: 2500
 DiceCalculation.create(die_id: d4.id, item_table: 'H', treasure_rule_id: tr.id)
 
 tr = TreasureRule.create(max: 78, min: 77, treasure_rule_set_id: trs.id)
-DiceCalculation.create(die_id: d4.id, item_type: 'art-object', item_value 7500, treasure_rule_id: tr.id)
+DiceCalculation.create(die_id: d4.id, item_type: 'art-object', item_value: 7500, treasure_rule_id: tr.id)
 DiceCalculation.create(die_id: d4.id, item_table: 'H', treasure_rule_id: tr.id)
 
 tr = TreasureRule.create(max: 80, min: 79, treasure_rule_set_id: trs.id)

@@ -69,7 +69,7 @@ DiceCalculation.create(dice_count: 2, die_id: d4.id, item_type: 'art-object', it
 DiceCalculation.create(die_id: d4.id, item_table: 'D', treasure_rule_id: tr.id)
 
 tr = TreasureRule.create(max: 58, min: 55, treasure_rule_set_id: trs.id)
-DiceCalculation.create(dice_count: 2, die_id: d4.id, item_type: 'art-object'm item_value: 750, treasure_rule_id: tr.id)
+DiceCalculation.create(dice_count: 2, die_id: d4.id, item_type: 'art-object', item_value: 750, treasure_rule_id: tr.id)
 DiceCalculation.create(die_id: d4.id, item_table: 'D', treasure_rule_id: tr.id)
 
 tr = TreasureRule.create(max: 62, min: 59, treasure_rule_set_id: trs.id)
@@ -89,7 +89,7 @@ DiceCalculation.create(dice_count: 2, die_id: d4.id, item_type: 'art-object', it
 DiceCalculation.create(die_id: d1.id, item_table: 'E', treasure_rule_id: tr.id)
 
 tr = TreasureRule.create(max: 72, min: 71, treasure_rule_set_id: trs.id)
-DiceCalculation.create(dice_count: 3, die_id d6.id, item_type:'gemstone', item_value: 500, treasure_rule_id: tr.id)
+DiceCalculation.create(dice_count: 3, die_id: d6.id, item_type: 'gemstone', item_value: 500, treasure_rule_id: tr.id)
 DiceCalculation.create(die_id: d1.id, item_table: 'E', treasure_rule_id: tr.id)
 
 tr = TreasureRule.create(max: 74, min: 73, treasure_rule_set_id: trs.id)
