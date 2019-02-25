@@ -1,8 +1,9 @@
 puts "creating magic item table G"
+
 # get dice used in rules
 d8 = Die.find_by(name: 'd8')
 
-MagicItem.create!(max: 11, min: 1, name: 'weapon, +2', table: 'G')
+MagicItem.create(max: 11, min: 1, name: 'weapon, +2', table: 'G')
 
 # this kind of rule has one row in the table proper with a bunch of subrows. it requires a second roll to figure out the real result
 parent = MagicItem.create(die_id: d8.id, max: 14, min: 12, name: 'figurine of wondrous power', table: 'G')
