@@ -7,7 +7,7 @@ class CreateRaceTraits < ActiveRecord::Migration[5.1]
       t.timestamps null: false
     end
 
-    add_reference :race_traits. :race, index: true
+    add_reference :race_traits, :race, index: true
     add_foreign_key :race_traits, :races, column: :race_id
   end
 end

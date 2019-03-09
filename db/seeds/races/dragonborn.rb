@@ -79,47 +79,56 @@ RaceName.create(group: 'male', name: 'Torinn', race_id: r.id)
 puts "creating dragonborn traits"
 
 RaceTrait.create(
+  race_id: r.id,
   trait_description: 'Your Strength score increases by 2, and your Charisma score increases by 1.',
   trait_header: 'ability score increases'
 )
 
 RaceTrait.create(
+  race_id: r.id,
   trait_description: 'Young dragonborn grow quickly. They walk hours after hatching, attain the size and development of a 10-year-old human child by the age of 3, and reach adulthood by 15. They live to be around 80.',
   trait_header: 'age'
 )
 
 RaceTrait.create(
+  race_id: r.id,
   trait_description: 'Dragonborn tend to extremes, making a conscious choice for one side or the other in the cosmic war between good and evil (represented by Bahamut and Tiamat, respectively). Most dragonborn are good, but those who side with Tiamat can be terrible villains.',
   trait_header: 'alignment'
 )
 
 RaceTrait.create(
+  race_id: r.id,
   trait_description: 'Dragonborn are taller and heavier than humans, standing well over 6 feet tall and averaging almost 250 pounds. Your size is Medium.',
   trait_header: 'size'
 )
 
 RaceTrait.create(
+  race_id: r.id,
   trait_description: 'Your base walking speed is 30 feet.',
   trait_header: 'speed'
 )
 
 # skip this one for now -- needs a table to display data
 # RaceTrait.create(
+#   race_id: r.id,
 #   trait_description: 'You have draconic ancestry. Choose one type of dragon from the Draconic Ancestry table. Your breath weapon and damage resistance are determined by the dragon type, as shown in the table.',
 #   trait_header: 'draconic ancestry'
 # )
 
 RaceTrait.create(
+  race_id: r.id,
   trait_description: 'You can use your action to exhale destructive energy. Your draconic ancestry determines the size, shape, and damage type of the exhalation. When you use your breath weapon, each creature in the area of the exhalation must make a saving throw, the type of which is determined by your draconic ancestry. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level, and 5d6 at 16th level. After you use your breath weapon, you can’t use it again until you complete a short or long rest.',
   trait_header: 'breath weapon'
 )
 
 RaceTrait.create(
+  race_id: r.id,
   trait_description: 'You have resistance to the damage type associated with your draconic ancestry.',
   trait_header: 'damage resistance'
 )
 
 RaceTrait.create(
+  race_id: r.id,
   trait_description: 'You can speak, read, and write Common and Draconic. Draconic is thought to be one of the oldest languages and is often used in the study of magic. The language sounds harsh to most other creatures and includes numerous hard consonants and sibilants.',
   trait_header: 'languages'
 )

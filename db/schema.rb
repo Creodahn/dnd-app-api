@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190201195738) do
+ActiveRecord::Schema.define(version: 20190309152743) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,6 +78,41 @@ ActiveRecord::Schema.define(version: 20190201195738) do
     t.index ["parent_id"], name: "index_magic_items_on_parent_id"
   end
 
+  create_table "race_names", force: :cascade do |t|
+    t.string "group"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "race_id"
+    t.index ["race_id"], name: "index_race_names_on_race_id"
+  end
+
+  create_table "race_traits", force: :cascade do |t|
+    t.text "trait_description"
+    t.string "trait_header"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "race_id"
+    t.index ["race_id"], name: "index_race_traits_on_race_id"
+  end
+
+  create_table "races", force: :cascade do |t|
+    t.integer "charisma", default: 0
+    t.integer "constitution", default: 0
+    t.integer "dexterity", default: 0
+    t.integer "intelligence", default: 0
+    t.string "name"
+    t.text "race_name_description"
+    t.text "short_description"
+    t.string "size", default: "medium"
+    t.string "source_book"
+    t.integer "speed", default: 30
+    t.integer "strength", default: 0
+    t.integer "wisdom", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "treasure_rule_sets", force: :cascade do |t|
     t.integer "max_cr"
     t.integer "min_cr"
@@ -102,5 +137,7 @@ ActiveRecord::Schema.define(version: 20190201195738) do
   add_foreign_key "dice_calculations", "treasure_rules"
   add_foreign_key "magic_items", "dice"
   add_foreign_key "magic_items", "magic_items", column: "parent_id"
+  add_foreign_key "race_names", "races"
+  add_foreign_key "race_traits", "races"
   add_foreign_key "treasure_rules", "treasure_rule_sets"
 end
