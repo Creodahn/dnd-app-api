@@ -28,7 +28,7 @@ tr = TreasureRule.create(max: 36, min: 27, treasure_rule_set_id: trs.id)
 DiceCalculation.create(dice_count: 2, die_id: d6.id, item_type: 'gemstone', item_value: 50, treasure_rule_id: tr.id)
 
 tr = TreasureRule.create(max: 44, min: 37, treasure_rule_set_id: trs.id)
-DiceCalculation.create(dice_count: 2, die_id: d6.id, item_type: 'gemstones', item_value: 10, treasure_rule_id: tr.id)
+DiceCalculation.create(dice_count: 2, die_id: d6.id, item_type: 'gemstone', item_value: 10, treasure_rule_id: tr.id)
 DiceCalculation.create(die_id: d6.id, item_table: 'A', item_type: 'magic-item', treasure_rule_id: tr.id)
 
 tr = TreasureRule.create(max: 52, min: 45, treasure_rule_set_id: trs.id)
