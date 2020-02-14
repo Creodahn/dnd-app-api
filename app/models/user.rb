@@ -8,7 +8,7 @@ class User < ApplicationRecord
   def find_by_auth_token(token)
     unless token.nil?
       begin
-        return User.find_by(auth_token: token)
+        return User.find_by(authentication_token: token)
       rescue
         return nil
       end
@@ -38,15 +38,15 @@ class User < ApplicationRecord
     SecureRandom.base64(12)
   end
 
-  def generate_auth_token
+  def generate_authentication_token
     token = User.new_token
 
-    self.update_columns(authenticated_at: DateTime.now, auth_token: token)
+    self.update_columns(authenticated_at: DateTime.now, authentication_token: token)
 
     token
   end
 
   def invalidate_auth_token
-    self.update_columns(authenticated_at: nil, auth_token: nil)
+    self.update_columns(authenticated_at: nil, authentication_token: nil)
   end
 end

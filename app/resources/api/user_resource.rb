@@ -1,10 +1,21 @@
 class Api::UserResource < JSONAPI::Resource
-  attribute :authenticated_at
-  attribute :authentication_token
-  attribute :username
+  attributes :authenticated_at, :authentication_token, :username, :password
+
+  has_one :profile
+
+  def self.updatable_fields(context)
+    super - [:username]
+  end
+
+  def self.creatable_fields(context)
+    super - [:username]
+  end
+
+  def fetchable_fields
+    super - [:password]
+  end
 
   filter :username, apply: -> (records, value, options) {
-    records.where(id: records.map{|r| r.id if r.username == value.first})
-    # User.find_by_username(value)
+    records.where(id: records.map{ |r| r.id if r.username == value.first })
   }
 end
