@@ -19,6 +19,6 @@ class Profile < ApplicationRecord
   private
 
   def authenticate_initial_login
-    self.user.generate_auth_token
+    self.user.generate_access_token
   end
 end

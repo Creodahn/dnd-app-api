@@ -1,5 +1,5 @@
 class Api::UserResource < JSONAPI::Resource
-  attributes :authenticated_at, :authentication_token, :username, :password
+  attributes :authenticated_at, :access_token, :username, :password
 
   has_one :profile
 

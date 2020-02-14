@@ -110,7 +110,7 @@ ActiveRecord::Schema.define(version: 20200213195639) do
   create_table "users", force: :cascade do |t|
     t.string "password_digest"
     t.date "authenticated_at"
-    t.string "authentication_token"
+    t.string "access_token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

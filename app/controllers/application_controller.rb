@@ -21,7 +21,7 @@ class ApplicationController < JSONAPI::ResourceController
   end
 
   def authenticate_token
-    return User.find_by(authentication_token: token)
+    return User.find_by(access_token: token)
   end
 
   def render_unauthorized

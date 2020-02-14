@@ -7,8 +7,8 @@ class SessionsController < ApplicationController
     return invalid_login_attempt unless u
 
     if u.authenticate(params[:password])
-      authentication_token = u.generate_authentication_token
-      render json: { authentication_token: authentication_token }
+      access_token = u.generate_access_token
+      render json: { access_token: access_token }
     else
       invalid_login_attempt
     end
@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
 
   def destroy
     u = current_user
-    u.invalidate_authentication_token
+    u.invalidate_access_token
     head :ok
   end
 
