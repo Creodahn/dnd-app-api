@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190201195738) do
+ActiveRecord::Schema.define(version: 20200213195639) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,6 +78,17 @@ ActiveRecord::Schema.define(version: 20190201195738) do
     t.index ["parent_id"], name: "index_magic_items_on_parent_id"
   end
 
+  create_table "profiles", force: :cascade do |t|
+    t.string "bio"
+    t.string "name"
+    t.string "email"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_profiles_on_email"
+    t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
   create_table "treasure_rule_sets", force: :cascade do |t|
     t.integer "max_cr"
     t.integer "min_cr"
@@ -94,6 +105,14 @@ ActiveRecord::Schema.define(version: 20190201195738) do
     t.datetime "updated_at", null: false
     t.bigint "treasure_rule_set_id"
     t.index ["treasure_rule_set_id"], name: "index_treasure_rules_on_treasure_rule_set_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "password_digest"
+    t.date "authenticated_at"
+    t.string "access_token"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "dice_calculations", "coins"
