@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200514180537) do
+ActiveRecord::Schema.define(version: 20200514181141) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,12 +57,20 @@ ActiveRecord::Schema.define(version: 20200514180537) do
     t.index ["treasure_rule_set_id"], name: "index_dice_calculations_on_treasure_rule_set_id"
   end
 
+  create_table "dice_roll_events", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "die_rolls", force: :cascade do |t|
+    t.integer "order"
     t.integer "result"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "die_id"
     t.bigint "profile_id"
+    t.bigint "dice_roll_event_id"
+    t.index ["dice_roll_event_id"], name: "index_die_rolls_on_dice_roll_event_id"
     t.index ["die_id"], name: "index_die_rolls_on_die_id"
     t.index ["profile_id"], name: "index_die_rolls_on_profile_id"
   end
@@ -130,6 +138,7 @@ ActiveRecord::Schema.define(version: 20200514180537) do
   add_foreign_key "dice_calculations", "treasure_rule_sets"
   add_foreign_key "dice_calculations", "treasure_rules"
   add_foreign_key "die_rolls", "dice"
+  add_foreign_key "die_rolls", "dice_roll_events"
   add_foreign_key "die_rolls", "profiles"
   add_foreign_key "magic_items", "dice"
   add_foreign_key "magic_items", "magic_items", column: "parent_id"

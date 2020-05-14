@@ -1,6 +1,7 @@
 class CreateDieRolls < ActiveRecord::Migration[5.1]
   def change
     create_table :die_rolls do |t|
+      t.integer :order
       t.integer :result
 
       t.timestamps
