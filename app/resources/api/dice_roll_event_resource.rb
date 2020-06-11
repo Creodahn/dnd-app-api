@@ -3,4 +3,6 @@ class Api::DiceRollEventResource < JSONAPI::Resource
   
   has_many :die_rolls
   has_one :profile
+
+  filter :profile
 end
