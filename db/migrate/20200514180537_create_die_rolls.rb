@@ -10,7 +10,7 @@ class CreateDieRolls < ActiveRecord::Migration[5.1]
     add_reference :die_rolls, :die, index: true
     add_foreign_key :die_rolls, :dice, column: :die_id
 
-    add_reference :die_rolls, :profile, index: true
-    add_foreign_key :die_rolls, :profiles, column: :profile_id
+    add_reference :die_rolls, :treasure_rule_set, index: true
+    add_foreign_key :die_rolls, :treasure_rule_sets, column: :treasure_rule_set_id
   end
 end
