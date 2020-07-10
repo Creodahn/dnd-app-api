@@ -10,5 +10,9 @@ class CreateDiceRollEvents < ActiveRecord::Migration[5.1]
 
     add_reference :dice_roll_events, :profile, index: true
     add_foreign_key :dice_roll_events, :profiles, column: :profile_id
+
+
+    add_reference :dice_roll_events, :treasure_rule_set, index: true
+    add_foreign_key :dice_roll_events, :treasure_rule_sets, column: :treasure_rule_set_id
   end
 end

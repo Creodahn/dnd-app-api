@@ -62,7 +62,9 @@ ActiveRecord::Schema.define(version: 20200514181141) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "profile_id"
+    t.bigint "treasure_rule_set_id"
     t.index ["profile_id"], name: "index_dice_roll_events_on_profile_id"
+    t.index ["treasure_rule_set_id"], name: "index_dice_roll_events_on_treasure_rule_set_id"
   end
 
   create_table "die_rolls", force: :cascade do |t|
@@ -71,11 +73,9 @@ ActiveRecord::Schema.define(version: 20200514181141) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "die_id"
-    t.bigint "treasure_rule_set_id"
     t.bigint "dice_roll_event_id"
     t.index ["dice_roll_event_id"], name: "index_die_rolls_on_dice_roll_event_id"
     t.index ["die_id"], name: "index_die_rolls_on_die_id"
-    t.index ["treasure_rule_set_id"], name: "index_die_rolls_on_treasure_rule_set_id"
   end
 
   create_table "gemstones", force: :cascade do |t|
@@ -141,9 +141,9 @@ ActiveRecord::Schema.define(version: 20200514181141) do
   add_foreign_key "dice_calculations", "treasure_rule_sets"
   add_foreign_key "dice_calculations", "treasure_rules"
   add_foreign_key "dice_roll_events", "profiles"
+  add_foreign_key "dice_roll_events", "treasure_rule_sets"
   add_foreign_key "die_rolls", "dice"
   add_foreign_key "die_rolls", "dice_roll_events"
-  add_foreign_key "die_rolls", "treasure_rule_sets"
   add_foreign_key "magic_items", "dice"
   add_foreign_key "magic_items", "magic_items", column: "parent_id"
   add_foreign_key "treasure_rules", "treasure_rule_sets"
