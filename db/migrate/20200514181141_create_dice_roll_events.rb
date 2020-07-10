@@ -1,7 +1,7 @@
 class CreateDiceRollEvents < ActiveRecord::Migration[5.1]
   def change
     create_table :dice_roll_events do |t|
-
+      t.string :route
       t.timestamps
     end
     

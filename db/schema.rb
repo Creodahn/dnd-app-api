@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 20200514181141) do
   end
 
   create_table "dice_roll_events", force: :cascade do |t|
+    t.string "route"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "profile_id"
