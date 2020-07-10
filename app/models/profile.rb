@@ -12,6 +12,8 @@ class Profile < ApplicationRecord
 
   belongs_to :user
 
+  has_many :dice_roll_events
+
   def email_case
     email.downcase!
   end

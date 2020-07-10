@@ -1,2 +1,2 @@
-class Api::MagicItemsController < ApplicationController
+class Api::MagicItemsController < UnauthIndexAllowedController
 end

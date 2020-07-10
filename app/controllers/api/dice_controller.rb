@@ -1,2 +1,2 @@
-class Api::DiceController < ApplicationController
+class Api::DiceController < UnauthIndexAllowedController
 end

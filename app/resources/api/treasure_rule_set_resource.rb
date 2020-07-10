@@ -7,4 +7,9 @@ class Api::TreasureRuleSetResource < JSONAPI::Resource
   filter :max_cr
   filter :min_cr
   filter :treasure_type
+
+  def apply_includes(records, directives)
+    super.includes(:dice_calculations)
+    super.includes(:treasure_rules)
+  end
 end

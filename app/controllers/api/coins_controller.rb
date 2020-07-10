@@ -1,2 +1,2 @@
-class Api::CoinsController < ApplicationController
+class Api::CoinsController < UnauthIndexAllowedController
 end
