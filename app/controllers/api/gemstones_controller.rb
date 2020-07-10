@@ -1,2 +1,2 @@
-class Api::GemstonesController < ApplicationController
+class Api::GemstonesController < UnauthIndexAllowedController
 end
