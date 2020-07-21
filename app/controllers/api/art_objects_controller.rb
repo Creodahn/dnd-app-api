@@ -1,2 +1,2 @@
-class Api::ArtObjectsController < ApplicationController
+class Api::ArtObjectsController < UnauthIndexAllowedController
 end
