@@ -1,2 +1,2 @@
-class Api::RacesController < ApplicationController
+class Api::RacesController < UnauthIndexAllowedController
 end
