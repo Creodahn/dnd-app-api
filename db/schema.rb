@@ -99,6 +99,17 @@ ActiveRecord::Schema.define(version: 20200514181141) do
     t.index ["parent_id"], name: "index_magic_items_on_parent_id"
   end
 
+  create_table "profiles", force: :cascade do |t|
+    t.string "bio"
+    t.string "name"
+    t.string "email"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_profiles_on_email"
+    t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
   create_table "race_names", force: :cascade do |t|
     t.string "group"
     t.string "name"
@@ -132,15 +143,6 @@ ActiveRecord::Schema.define(version: 20200514181141) do
     t.integer "wisdom", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  create_table "profiles", force: :cascade do |t|
-    t.string "bio"
-    t.string "name"
-    t.string "email"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_profiles_on_email"
-    t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
   create_table "treasure_rule_sets", force: :cascade do |t|
